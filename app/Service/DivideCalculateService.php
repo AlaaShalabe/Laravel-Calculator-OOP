@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Servic;
+namespace App\Service;
 
 use App\Contracts\CalculateServiceContract;
 use Exception;
 use PhpParser\Node\Stmt\TryCatch;
 
-class DivideCalculateServic implements CalculateServiceContract
+class DivideCalculateService implements CalculateServiceContract
 {
     private $sing =  '/';
 

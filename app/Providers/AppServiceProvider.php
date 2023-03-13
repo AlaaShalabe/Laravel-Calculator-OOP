@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
-use App\Servic\AddCalculateServic;
+use App\Contracts\CalculateServiceContract;
+use App\Service\AddCalculateService;
+use App\Service\DivideCalculateService;
+use App\Service\MultiplyCalculateService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if (request()->has('operate')) {
             $calssName = $this->resolveOperateDependency(request()->get('operate'));
+            $this->app->bind(CalculateServiceContract::class, $calssName);
         }
     }
 
@@ -32,13 +36,13 @@ class AppServiceProvider extends ServiceProvider
     {
         switch ($calssName) {
             case 'Add':
-                return AddCalculateServic::class;
+                return AddCalculateService::class;
             case 'Subtract':
-                return SubtractCalculateServic::class;
+                return SubtractCalculateService::class;
             case 'Multiply':
-                return MultiplyCalculateServic::class;
+                return MultiplyCalculateService::class;
             case 'Divide':
-                return DivideCalculateServic::class;
+                return DivideCalculateService::class;
         }
         throw new \Exception('Error: Operate {$class_name} not found.');
     }

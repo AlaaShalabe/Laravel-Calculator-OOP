@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Servic;
+namespace App\Service;
 
 use App\Contracts\CalculateServiceContract;
 
-class SubtractCalculateServic implements CalculateServiceContract
+class SubtractCalculateService extends CalculateServiceContract
 {
     private $sing =  '-';
 
