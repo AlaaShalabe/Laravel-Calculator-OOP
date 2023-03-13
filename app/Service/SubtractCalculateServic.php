@@ -2,7 +2,7 @@
 
 namespace App\Servic;
 
-use App\Contacts\CalculateServiceContract;
+use App\Contracts\CalculateServiceContract;
 
 class SubtractCalculateServic implements CalculateServiceContract
 {
