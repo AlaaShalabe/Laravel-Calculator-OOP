@@ -21,23 +21,24 @@
         <div class="alert alert-info" role="alert">
             A simple info alert—check it out!
         </div>
-        <form class="row g-3">
+        <form class="row g-3" method="get" action="{{ route('result') }}">
+            @csrf
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Number 1:</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="">
+                <input type="text" name="val1" class="form-control" id="inputAddress" placeholder="">
             </div>
             <div class="col-12">
                 <label for="inputAddress2" class="form-label">Number 2:</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                <input type="text" name="val2" class="form-control" id="inputAddress2" placeholder="">
             </div>
             <div class="col-md-4">
                 <label for="inputState" class="form-label">Operation:</label>
                 <select name="operate" class="form-select">
                     <option selected>Choose...</option>
-                    <option>Add +</option>
-                    <option>Subtract -</option>
-                    <option>Multiply *</option>
-                    <option>Divide /</option>
+                    <option value="Add">Add +</option>
+                    <option value="Subtract">Subtract -</option>
+                    <option value="Multiply">Multiply *</option>
+                    <option value="Divide">Divide /</option>
                 </select>
             </div>
             <div class="col-12">
