@@ -18,9 +18,12 @@
         </div>
     </nav>
     <div class="container">
-        <div class="alert alert-info" role="alert">
-            A simple info alert—check it out!
-        </div>
+        @if (Session::get('result'))
+            <div class="alert alert-info mr-6 ml-6" role="alert">
+                <li>{{ Session::get('result') }}</li>
+            </div>
+        @endif
+
         <form class="row g-3" method="get" action="{{ route('result') }}">
             @csrf
             <div class="col-12">

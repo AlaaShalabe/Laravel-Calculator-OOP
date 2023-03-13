@@ -4,7 +4,7 @@ namespace App\Service;
 
 use App\Contracts\CalculateServiceContract;
 
-class SubtractCalculateService extends CalculateServiceContract
+class SubtractCalculateService implements CalculateServiceContract
 {
     private $sing =  '-';
 

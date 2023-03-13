@@ -6,6 +6,7 @@ use App\Contracts\CalculateServiceContract;
 use App\Service\AddCalculateService;
 use App\Service\DivideCalculateService;
 use App\Service\MultiplyCalculateService;
+use App\Service\SubtractCalculateService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

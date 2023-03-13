@@ -17,9 +17,8 @@ class CalculatorController extends Controller
 
     public function calculate(CalculatorRequest $request, CalculateServiceContract $calculator)
     {
-        $request->Validated();
-        dd($request);
-        $cal = $calculator->calculat($request->val1, $request->val2)->getSign();
-        return  redirect()->route('result')->with(['cal' => $cal]);
+        $request->validated();
+        $cal = $calculator->calculat($request->val1, $request->val2);
+        return  redirect()->back()->with('result', 'Successfully calculated: ' . $cal . ' ');
     }
 }
